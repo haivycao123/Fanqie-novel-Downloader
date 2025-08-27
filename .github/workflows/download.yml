@@ -19,4 +19,4 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Tải truyện
-        run: python reader.py --bookid 7400354167778200600 --format txt,epub
+        run: python gui.py --bookid 7400354167778200600 --format txt,epub
