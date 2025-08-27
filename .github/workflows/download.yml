@@ -1,0 +1,22 @@
+name: Download Novel
+
+on:
+  workflow_dispatch:   # cho phép bạn tự bấm nút chạy thủ công
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Cài Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Cài dependencies
+        run: pip install -r requirements.txt
+
+      - name: Tải truyện
+        run: python main.py --bookid 7400354167778200600 --format txt,epub
