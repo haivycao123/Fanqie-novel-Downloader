@@ -225,7 +225,7 @@ class Reader(ctk.CTkToplevel):
             author_match = author_pattern.match(line)
             if author_match:
                 self.parsed_author = author_match.group(1).strip()
-                print(f"解析到作者: {self.parsed_author}") # Debug
+                print(f"解析到作者: {self.parsed_author}".encode("utf-8", errors="ignore").decode())
                 # Stop searching for author once found
                 break
             # Add title parsing here if needed in the future
